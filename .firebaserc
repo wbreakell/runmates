@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "runmates-529cd": {
+      "hosting": {
+        "runmates": [
+          "runmates-529cd"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "runmates-529cd"
+  }
+}
