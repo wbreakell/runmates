@@ -1,13 +1,21 @@
+section {
+  margin: 0 auto;
+  max-width: 65ch;
+}
+
 h1,
 h2 {
   color: #202124;
   margin-top: 0;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
 article {
   background-color: #fff;
   border-radius: 8px;
   margin-bottom: 1rem;
-  max-width: 65ch;
   padding: 1rem 1.5rem;
 }
