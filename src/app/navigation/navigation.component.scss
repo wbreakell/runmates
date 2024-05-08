@@ -1,0 +1,26 @@
+nav {
+  background-color: #202124;
+  height: 100vh;
+  padding: 0.75rem;
+  width: 360px;
+}
+
+h1 {
+  color: #fff;
+  padding-left: 1rem;
+}
+
+a {
+  align-items: center;
+  border-radius: 8px;
+  color: #bdc1c6;
+  display: flex;
+  height: 56px;
+  padding: 0 1rem;
+  text-decoration: none;
+
+  &.selected {
+    background-color: rgba(#fff, 0.05);
+    color: #fff;
+  }
+}
