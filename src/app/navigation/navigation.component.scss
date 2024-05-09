@@ -1,13 +1,18 @@
 nav {
   background-color: #202124;
-  height: 100%;
-  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100vh;
+  justify-content: space-between;
   padding: 0.75rem;
+  position: fixed;
   width: 360px;
 }
 
 h1 {
   color: #fff;
+  font-size: 2rem;
+  margin-top: 1rem;
   padding-left: 1rem;
 }
 
@@ -23,5 +28,50 @@ a {
   &.selected {
     background-color: rgba(#fff, 0.05);
     color: #fff;
+  }
+}
+
+span {
+  margin-right: 0.75rem;
+}
+
+button {
+  align-items: center;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  height: 56px;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.post-button {
+  background-color: #8ab4f8;
+  color: #202124;
+
+  &:hover {
+    box-shadow: 0 1px 2px 0 rgba(#000, 0.3), 0 1px 3px 1px rgba(#000, 0.15);
+  }
+}
+
+.signout-button {
+  background-color: transparent;
+  border: 1px solid #5f6368;
+  color: #8ab4f8;
+
+  &:focus {
+    background-color: rgba(#8ab4f8, 0.12);
+    border: 1px solid #d2e3fc;
+    color: #d2e3fc;
+  }
+
+  &:hover {
+    background-color: rgba(#8ab4f8, 0.04);
+    color: #d2e3fc;
   }
 }
