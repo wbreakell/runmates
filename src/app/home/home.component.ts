@@ -30,11 +30,11 @@ export class HomeComponent {
       const recentPostsQuery = query(collection(firestore, 'posts'), orderBy('timestamp', 'desc'), limit(12));
       onSnapshot(recentPostsQuery, (snapshot) => {
         this.posts = [];
-        snapshot.docChanges().forEach( (change) => {
-          var message = change.doc.data();
+        snapshot.forEach( (doc) => {
+          var message = doc.data();
           this.posts.push(
             {
-              id: change.doc.id,
+              id: doc.id,
               title: message['title'],
               content: message['content'],
               pace: message['pace'],
