@@ -31,7 +31,7 @@ export class HomeComponent {
       onSnapshot(recentPostsQuery, (snapshot) => {
         this.posts = [];
         snapshot.forEach( (doc) => {
-          var message = doc.data();
+          const message = doc.data();
           this.posts.push(
             {
               id: doc.id,
