@@ -25,6 +25,11 @@ h1 {
   border-color: rgba(32, 142, 79, 0.2);
 }
 
+#tag-box {
+  display: flex;
+  flex-direction: row;
+}
+
 article {
   background-color: #fff;
   border-radius: 8px;
