@@ -8,8 +8,14 @@
         <div class="timestamp">{{ post.timestamp }}</div>
         <p>{{ post.content }}</p>
         <div class="tag-box">
-          <div class="post-tag">{{ post.location }}</div>
-          <div class="post-tag">{{ post.pace }}</div>
+          <div class="post-tag">
+            <span class="material-symbols-outlined">location_on</span>
+            <div>{{ post.location }}</div>
+          </div>
+          <div class="post-tag" [style]="getPaceStyle(post.pace)">
+            <span class="material-symbols-outlined">directions_run</span>
+            <div>{{ post.pace }}</div>
+          </div>
         </div>
       </article>
     }
