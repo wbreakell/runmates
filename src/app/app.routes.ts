@@ -33,7 +33,7 @@ export const routes: Routes = [
     component: NewAccountComponent,
   },
   {
-    path: 'post',
+    path: 'post/:id',
     title: 'Post · RunMates',
     component: PostComponent,
   }

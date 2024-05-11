@@ -1,9 +1,16 @@
 <app-navigation />
 <main>
-  <section>
-    <h1>Title</h1>
-  </section>
-  <section>
-    <h2>Comments</h2>
-  </section>
+    <section>
+        <h1>Title</h1>
+    </section>
+    <section>
+        <h2>Comments</h2>
+        @for (comment of comments; track comment.id) {
+        <article>
+            <h3>{{ comment.author }}</h3>
+            <p>{{ comment.content }}</p>
+            <div class="timestamp">{{ comment.timestamp }}</div>
+        </article>
+        }
+    </section>
 </main>
