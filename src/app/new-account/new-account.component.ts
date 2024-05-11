@@ -2,21 +2,21 @@ import { Component, inject, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Router, RouterLink } from '@angular/router';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Auth, User, user, signInWithEmailAndPassword } from '@angular/fire/auth';
+import { Auth, User, user, createUserWithEmailAndPassword } from '@angular/fire/auth';
 
 @Component({
-  selector: 'app-signin',
+  selector: 'app-new-account',
   standalone: true,
   imports: [ReactiveFormsModule, RouterLink],
-  templateUrl: './signin.component.html',
-  styleUrl: './signin.component.scss'
+  templateUrl: './new-account.component.html',
+  styleUrl: './new-account.component.scss'
 })
-export class SigninComponent implements OnDestroy {
+export class NewAccountComponent implements OnDestroy {
   private router = inject(Router);
   private auth: Auth = inject(Auth);
   user$ = user(this.auth);
   userSubscription: Subscription;
-  signinForm = new FormGroup({
+  newAccountForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
   });
@@ -29,13 +29,13 @@ export class SigninComponent implements OnDestroy {
     });
   }
 
-  async signin() {
-    if (this.signinForm.valid) {
+  async createAccount() {
+    if (this.newAccountForm.valid) {
       try {
-        const userCredential = await signInWithEmailAndPassword(
+        const userCredential = await createUserWithEmailAndPassword(
           this.auth,
-          this.signinForm.value.email!,
-          this.signinForm.value.password!,
+          this.newAccountForm.value.email!,
+          this.newAccountForm.value.password!,
         );
       } catch (error) {
         console.log(error);
