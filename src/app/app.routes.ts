@@ -3,6 +3,7 @@ import { redirectUnauthorizedTo, AuthGuard } from '@angular/fire/auth-guard';
 
 import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
+import { NewPostComponent } from './new-post/new-post.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 
 const redirectUnauthorizedToSignin = () => redirectUnauthorizedTo(['signin']);
@@ -19,6 +20,11 @@ export const routes: Routes = [
     path: 'signin',
     title: 'Sign In · RunMates',
     component: SigninComponent,
+  },
+  {
+    path: 'new-post',
+    title: 'New Post · RunMates',
+    component: NewPostComponent,
   },
   {
     path: 'new-account',

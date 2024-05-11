@@ -1,0 +1,29 @@
+<app-navigation />
+<main>
+  <section>
+    <h1>New Post</h1>
+    <form [formGroup]="newPostForm" (ngSubmit)="createPost()">
+        <label>
+            Title
+            <input formControlName="title" />
+        </label>
+        <label>
+            Content
+            <textarea formControlName="content" rows="5"> </textarea>
+        </label>
+        <label>
+            Location
+            <input formControlName="location" />
+        </label>
+        <label>
+            Pace
+            <select formControlName="pace" >
+                <option value="Slow">Slow</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Fast">Fast</option>
+            </select>
+        </label>
+        <button type="submit" [disabled]="newPostForm.invalid || didIJustHitSubmitAndAmWaitingToLoad"><span class="material-symbols-outlined">edit</span>Post</button>
+    </form>
+  </section>
+</main>
