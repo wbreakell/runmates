@@ -1,0 +1,14 @@
+<h1>RunMates</h1>
+<h2>Sign in</h2>
+<p>Don't have an account? <a href="#">Sign up</a></p>
+<form [formGroup]="signinForm" (ngSubmit)="signin()">
+  <label>
+    Email
+    <input type="email" formControlName="email" />
+  </label>
+  <label>
+    Password
+    <input type="password" formControlName="password" />
+  </label>
+  <button type="submit">Sign in</button>
+</form>

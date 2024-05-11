@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationComponent } from '../navigation/navigation.component';
 import {
   collection,
   query,
@@ -11,7 +12,7 @@ import {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [NavigationComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
