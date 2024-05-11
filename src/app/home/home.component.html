@@ -5,6 +5,7 @@
     @for (post of posts; track post.id) {
       <article>
         <h2>{{ post.title }}</h2>
+        <div class="timestamp">{{ post.timestamp }}</div>
         <p>{{ post.content }}</p>
         <div class="tag-box">
           <div class="post-tag">{{ post.location }}</div>

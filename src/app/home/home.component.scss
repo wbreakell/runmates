@@ -12,6 +12,7 @@ h1,
 h2 {
   color: #202124;
   margin-top: 0;
+  margin-bottom: 5px;
 }
 
 h1 {
@@ -33,6 +34,11 @@ h1 {
 .tag-box {
   display: flex;
   flex-direction: row;
+}
+
+.timestamp {
+  color: gray;
+  font-size: 0.75rem;
 }
 
 article {

@@ -18,6 +18,7 @@ import {
 })
 export class HomeComponent {
   private _posts = [];
+  private timeOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
 
   public get posts(): any {
     return this._posts;
@@ -40,6 +41,7 @@ export class HomeComponent {
               content: message['content'],
               pace: message['pace'],
               location: message['location'],
+              timestamp: message['timestamp']?.toDate().toLocaleString(undefined, this.timeOptions),
             },
           );
         });
