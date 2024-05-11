@@ -22,6 +22,8 @@ export class NewPostComponent {
     private router: Router,
   ) {}
 
+  didIJustHitSubmitAndAmWaitingToLoad = false;
+
   newPostForm = new FormGroup({
     title: new FormControl('', Validators.required),
     content: new FormControl('', Validators.required),
@@ -31,6 +33,8 @@ export class NewPostComponent {
 
   // Need to validate that the fields are not empty.
   async createPost() {
+    this.newPostForm.disable();
+    this.didIJustHitSubmitAndAmWaitingToLoad = true;
     await addDoc(collection(getFirestore(), 'posts'), {
       author: "test1", // Get auth instead
       title: this.newPostForm.value.title!,

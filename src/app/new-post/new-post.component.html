@@ -19,7 +19,7 @@
             Pace
             <input formControlName="pace" />
         </label>
-        <button type="submit">Post</button>
+        <button type="submit" [disabled]="newPostForm.invalid || didIJustHitSubmitAndAmWaitingToLoad">Post</button>
     </form>
   </section>
 </main>
