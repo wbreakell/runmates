@@ -20,7 +20,9 @@ main {
     margin-bottom: 1.5rem;
   }
   
-  input {
+  input,
+  select,
+  textarea {
     border-radius: 8px;
     border: 1px solid #80868b;
     color: #3c4043;

@@ -9,7 +9,7 @@
         </label>
         <label>
             Content
-            <input formControlName="content" />
+            <textarea formControlName="content" rows="5"> </textarea>
         </label>
         <label>
             Location
@@ -17,7 +17,11 @@
         </label>
         <label>
             Pace
-            <input formControlName="pace" />
+            <select formControlName="pace" >
+                <option value="Slow">Slow</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Fast">Fast</option>
+            </select>
         </label>
         <button type="submit" [disabled]="newPostForm.invalid || didIJustHitSubmitAndAmWaitingToLoad"><span class="material-symbols-outlined">edit</span>Post</button>
     </form>
