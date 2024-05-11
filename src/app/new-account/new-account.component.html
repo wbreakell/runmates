@@ -1,0 +1,14 @@
+<h1>RunMates</h1>
+<h2>Create account</h2>
+<p>Already have an account? <a routerLink="/signin">Sign in</a></p>
+<form [formGroup]="newAccountForm" (ngSubmit)="createAccount()">
+  <label>
+    Email
+    <input type="email" formControlName="email" />
+  </label>
+  <label>
+    Password
+    <input type="password" formControlName="password" />
+  </label>
+  <button type="submit">Create account</button>
+</form>
