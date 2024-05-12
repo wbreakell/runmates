@@ -15,5 +15,12 @@
             <div class="timestamp">{{ comment.timestamp }}</div>
         </article>
         }
+        <form [formGroup]="commentForm" (ngSubmit)="comment()">
+            <label>
+                Comment
+                <textarea formControlName="content" rows="3"> </textarea>
+            </label>
+            <button type="submit" [disabled]="commentForm.invalid || didIJustHitSubmitAndAmWaitingToLoad">Post</button>
+        </form>
     </section>
 </main>
