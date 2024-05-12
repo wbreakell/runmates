@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationComponent } from '../navigation/navigation.component';
 import { Router } from '@angular/router';
-import { Auth, User } from '@angular/fire/auth';
+import { Auth } from '@angular/fire/auth';
 import {
   collection,
   addDoc,
