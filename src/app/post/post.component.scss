@@ -16,6 +16,7 @@ h2 {
 
 h1 {
     font-size: 2rem;
+    margin-bottom: 0;
 }
 
 h3 {
@@ -47,10 +48,11 @@ button {
     background-color: #8ab4f8;
     margin-top: 2rem;
     color: #202124;
+
     &:hover {
-      box-shadow: 0 1px 2px 0 rgba(#000, 0.3), 0 1px 3px 1px rgba(#000, 0.15);
+        box-shadow: 0 1px 2px 0 rgba(#000, 0.3), 0 1px 3px 1px rgba(#000, 0.15);
     }
-  }
+}
 
 textarea {
     border-radius: 8px;
@@ -68,15 +70,43 @@ p {
     margin-bottom: 0.75rem;
 }
 
+.material-symbols-outlined {
+    font-size: 20px;
+    margin-right: 0.5rem;
+}
+
 .author-box {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.material-symbols-outlined {
+.back {
+    cursor: pointer;
     font-size: 30px;
-    margin-right: 0.5rem;
+}
+
+.post-tag {
+    padding: 4px 10px;
+    margin: 5px 10px 5px 0;
+    border-radius: 999px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    color: rgb(2, 70, 117);
+    background-color: rgba(52, 152, 219, 0.08);
+    border-color: rgba(36, 106, 153, 0.2);
+}
+
+.profile-pic {
+    font-size: 30px;
+}
+
+.tag-box {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 0.75rem;
 }
 
 .timestamp {
