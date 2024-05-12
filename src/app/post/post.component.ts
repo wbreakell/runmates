@@ -33,6 +33,7 @@ export class PostComponent {
   pace = '';
   location = '';
   timestamp = '';
+  author = '';
 
   public get comments(): any {
     return this._comments;
@@ -58,6 +59,7 @@ export class PostComponent {
         this.pace = message['pace'];
         this.location = message['location'];
         this.timestamp = message['timestamp']?.toDate().toLocaleString('en-US', this.timeOptions);
+        this.author = message['author'];
       }
     })
     
