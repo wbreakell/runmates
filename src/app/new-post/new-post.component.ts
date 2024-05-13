@@ -40,6 +40,7 @@ export class NewPostComponent {
     const userDoc = await getDoc(doc(getFirestore(), `users/${currentId}`));
     await addDoc(collection(getFirestore(), 'posts'), {
       author: userDoc.data()!['name'],
+      authorId: currentId,
       title: this.newPostForm.value.title!,
       content: this.newPostForm.value.content!,
       location: this.newPostForm.value.location!,

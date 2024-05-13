@@ -107,6 +107,7 @@ export class PostComponent {
     const userDoc = await getDoc(doc(getFirestore(), `users/${currentId}`));
     await addDoc(collection(getFirestore(), `posts/${this.route.snapshot.paramMap.get('id')}/comments`), {
       author: userDoc.data()!['name'],
+      authorId: currentId,
       content: this.commentForm.value.content!,
       public: true,
       timestamp: serverTimestamp(),
