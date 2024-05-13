@@ -3,12 +3,12 @@
     <h1>RunMates</h1>
     <ul>
       <li>
-        <a class="selected" routerLink="/">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" ariaCurrentWhenActive="page">
           <span class="material-symbols-outlined">home</span>Home
         </a>
       </li>
       <li>
-        <a routerLink="/conduct">
+        <a routerLink="/conduct" routerLinkActive="active" ariaCurrentWhenActive="page">
           <span class="material-symbols-outlined">handshake</span>Code of Conduct
         </a>
       </li>
