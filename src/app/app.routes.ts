@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { NewAccountComponent } from './new-account/new-account.component';
+import { ConductComponent } from './conduct/conduct.component';
 
 const redirectUnauthorizedToSignin = () => redirectUnauthorizedTo(['signin']);
 
@@ -30,5 +31,10 @@ export const routes: Routes = [
     path: 'new-account',
     title: 'Create Account · RunMates',
     component: NewAccountComponent,
+  },
+  {
+    path: 'conduct',
+    title: 'Code of Conduct · RunMates',
+    component: ConductComponent,
   },
 ];
