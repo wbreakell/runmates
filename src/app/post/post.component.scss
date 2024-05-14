@@ -25,6 +25,11 @@ h3 {
     margin-bottom: 0.5rem;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 article {
     background-color: #fff;
     border-radius: 8px;
@@ -115,17 +120,17 @@ p {
     border-color: rgba(32, 142, 79, 0.2);
   }
   
-  .moderate {
-    color: rgb(130, 130, 0);
-    background-color: rgba(243, 243, 18, 0.08);
-    border-color: rgba(170, 170, 12, 0.2);
-  }
-  
-  .fast {
-    color: rgb(201, 7, 81);
-    background-color: rgba(247, 39, 136, 0.08);
-    border-color: rgba(172, 27, 102, 0.2);
-  }
+.moderate {
+color: rgb(130, 130, 0);
+background-color: rgba(243, 243, 18, 0.08);
+border-color: rgba(170, 170, 12, 0.2);
+}
+
+.fast {
+color: rgb(201, 7, 81);
+background-color: rgba(247, 39, 136, 0.08);
+border-color: rgba(172, 27, 102, 0.2);
+}
 
 .timestamp {
     color: gray;
