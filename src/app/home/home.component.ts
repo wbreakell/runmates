@@ -42,20 +42,20 @@ export class HomeComponent {
               content: message['content'],
               pace: message['pace'],
               location: message['location'],
-              timestamp: message['timestamp']?.toDate().toLocaleString(undefined, this.timeOptions),
+              timestamp: message['timestamp']?.toDate().toLocaleString('en-US', this.timeOptions),
             },
           );
         });
       });
     }
 
-    getPaceStyle(pace: String) {
+    getPaceClass(pace: String) {
       if (pace === "Slow") {
-        return 'color: rgb(0, 91, 38); background-color: rgba(46, 204, 113, 0.08); border-color: rgba(32, 142, 79, 0.2);';
+        return 'post-tag slow';
       }
       if (pace === "Moderate") {
-        return 'color: rgb(130, 130, 0); background-color: rgba(243, 243, 18, 0.08); border-color: rgba(170, 170, 12, 0.2);';
+        return 'post-tag moderate';
       }
-      return 'color: rgb(201, 7, 81); background-color: rgba(247, 39, 136, 0.08); border-color: rgba(172, 27, 102, 0.2);';
+      return 'post-tag fast';
     }
 }

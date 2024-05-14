@@ -12,7 +12,7 @@
             <span class="material-symbols-outlined">location_on</span>
             <div>{{ post.location }}</div>
           </div>
-          <div class="post-tag" [style]="getPaceStyle(post.pace)">
+          <div [class]="getPaceClass(post.pace)">
             <span class="material-symbols-outlined">directions_run</span>
             <div>{{ post.pace }}</div>
           </div>
