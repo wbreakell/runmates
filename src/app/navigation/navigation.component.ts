@@ -1,12 +1,12 @@
 import { Component, inject, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Router, RouterLink } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { Auth, User, user, signOut } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss'
 })
