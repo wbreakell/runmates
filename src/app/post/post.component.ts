@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Auth } from '@angular/fire/auth';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationComponent } from '../navigation/navigation.component';
 import {
@@ -23,6 +24,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
   styleUrl: './post.component.scss'
 })
 export class PostComponent {
+  private auth: Auth = inject(Auth);
   private _comments = [];
   private timeOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
   didIJustHitSubmitAndAmWaitingToLoad = false;
@@ -31,6 +33,7 @@ export class PostComponent {
   pace = '';
   location = '';
   timestamp = '';
+  author = '';
 
   public get comments(): any {
     return this._comments;
@@ -56,6 +59,7 @@ export class PostComponent {
         this.pace = message['pace'];
         this.location = message['location'];
         this.timestamp = message['timestamp']?.toDate().toLocaleString('en-US', this.timeOptions);
+        this.author = message['author'];
       }
     })
     
@@ -99,8 +103,11 @@ export class PostComponent {
   async comment() {
     this.commentForm.disable();
     this.didIJustHitSubmitAndAmWaitingToLoad = true;
+    const currentId = this.auth.currentUser?.uid;
+    const userDoc = await getDoc(doc(getFirestore(), `users/${currentId}`));
     await addDoc(collection(getFirestore(), `posts/${this.route.snapshot.paramMap.get('id')}/comments`), {
-      author: "test2", // Get auth instead
+      author: userDoc.data()!['name'],
+      authorId: currentId,
       content: this.commentForm.value.content!,
       public: true,
       timestamp: serverTimestamp(),

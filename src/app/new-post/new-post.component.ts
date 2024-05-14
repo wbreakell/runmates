@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationComponent } from '../navigation/navigation.component';
 import { Router } from '@angular/router';
+import { Auth } from '@angular/fire/auth';
 import {
   collection,
   addDoc,
   getFirestore,
   serverTimestamp,
+  getDoc,
+  doc,
 } from '@angular/fire/firestore';
 
 @Component({
@@ -17,10 +20,8 @@ import {
   styleUrl: './new-post.component.scss'
 })
 export class NewPostComponent {
-
-  constructor(
-    private router: Router,
-  ) {}
+  private auth: Auth = inject(Auth);
+  private router: Router = inject(Router);
 
   didIJustHitSubmitAndAmWaitingToLoad = false;
 
@@ -35,8 +36,11 @@ export class NewPostComponent {
   async createPost() {
     this.newPostForm.disable();
     this.didIJustHitSubmitAndAmWaitingToLoad = true;
+    const currentId = this.auth.currentUser?.uid;
+    const userDoc = await getDoc(doc(getFirestore(), `users/${currentId}`));
     await addDoc(collection(getFirestore(), 'posts'), {
-      author: "test1", // Get auth instead
+      author: userDoc.data()!['name'],
+      authorId: currentId,
       title: this.newPostForm.value.title!,
       content: this.newPostForm.value.content!,
       location: this.newPostForm.value.location!,
