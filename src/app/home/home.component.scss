@@ -12,22 +12,29 @@ h1,
 h2 {
   color: #202124;
   margin-top: 0;
+  margin-bottom: 5px;
 }
 
 h1 {
   font-size: 2rem;
 }
 
+.material-symbols-outlined {
+  font-size: 20px;
+  padding: 0 3px;
+}
+
 .post-tag {
   padding: 4px 10px;
   margin: 5px 10px 5px 0;
   border-radius: 999px;
-  text-overflow: ellipsis;
-  max-width: 150px;
-  text-align: center;
-  color: rgb(0, 91, 38);
-  background-color: rgba(46, 204, 113, 0.08);
-  border-color: rgba(32, 142, 79, 0.2);
+  max-width: 250px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  color: rgb(2, 70, 117);
+  background-color: rgba(52, 152, 219, 0.08);
+  border-color: rgba(36, 106, 153, 0.2);
 }
 
 .tag-box {
@@ -35,9 +42,33 @@ h1 {
   flex-direction: row;
 }
 
+.slow {
+  color: rgb(0, 91, 38);
+  background-color: rgba(46, 204, 113, 0.08);
+  border-color: rgba(32, 142, 79, 0.2);
+}
+
+.moderate {
+  color: rgb(130, 130, 0);
+  background-color: rgba(243, 243, 18, 0.08);
+  border-color: rgba(170, 170, 12, 0.2);
+}
+
+.fast {
+  color: rgb(201, 7, 81);
+  background-color: rgba(247, 39, 136, 0.08);
+  border-color: rgba(172, 27, 102, 0.2);
+}
+
+.timestamp {
+  color: gray;
+  font-size: 0.75rem;
+}
+
 article {
   background-color: #fff;
   border-radius: 8px;
   margin-bottom: 1rem;
   padding: 1rem 1.5rem;
+  cursor: pointer;
 }

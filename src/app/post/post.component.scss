@@ -1,0 +1,138 @@
+main {
+    margin-left: 360px;
+    padding: 1.75rem;
+}
+
+section {
+    margin: 0 auto;
+    max-width: 65ch;
+}
+
+h1,
+h2 {
+    color: #202124;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+h3 {
+    color: #202124;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+article {
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+button {
+    align-items: center;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    height: 56px;
+    justify-content: center;
+    margin-bottom: 1rem;
+    width: 100%;
+    background-color: #8ab4f8;
+    margin-top: 2rem;
+    color: #202124;
+
+    &:hover {
+        box-shadow: 0 1px 2px 0 rgba(#000, 0.3), 0 1px 3px 1px rgba(#000, 0.15);
+    }
+}
+
+textarea {
+    border-radius: 8px;
+    border: 1px solid #80868b;
+    color: #3c4043;
+    display: block;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem;
+    width: 100%;
+}
+
+p {
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.material-symbols-outlined {
+    font-size: 20px;
+    margin-right: 0.5rem;
+}
+
+.author-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.back {
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.post-tag {
+    padding: 4px 10px;
+    margin: 5px 10px 5px 0;
+    border-radius: 999px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    color: rgb(2, 70, 117);
+    background-color: rgba(52, 152, 219, 0.08);
+    border-color: rgba(36, 106, 153, 0.2);
+}
+
+.profile-pic {
+    font-size: 30px;
+}
+
+.tag-box {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 0.75rem;
+}
+
+.slow {
+    color: rgb(0, 91, 38);
+    background-color: rgba(46, 204, 113, 0.08);
+    border-color: rgba(32, 142, 79, 0.2);
+  }
+  
+.moderate {
+color: rgb(130, 130, 0);
+background-color: rgba(243, 243, 18, 0.08);
+border-color: rgba(170, 170, 12, 0.2);
+}
+
+.fast {
+color: rgb(201, 7, 81);
+background-color: rgba(247, 39, 136, 0.08);
+border-color: rgba(172, 27, 102, 0.2);
+}
+
+.timestamp {
+    color: gray;
+    font-size: 0.75rem;
+}

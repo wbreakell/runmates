@@ -1,0 +1,39 @@
+<app-navigation />
+<main>
+    <a class="material-symbols-outlined back" routerLink="/">arrow_back</a>
+    <section>
+        <h1>{{ title }}</h1>
+        <p class="timestamp">{{ timestamp }}</p>
+        <p>{{ content }}</p>
+        <div class="tag-box">
+            <div class="post-tag">
+              <span class="material-symbols-outlined">location_on</span>
+              <div>{{ location }}</div>
+            </div>
+            <div [class]="getPaceClass(pace)">
+              <span class="material-symbols-outlined">directions_run</span>
+              <div>{{ pace }}</div>
+            </div>
+          </div>
+    </section>
+    <section>
+        <h2>Comments</h2>
+        @for (comment of comments; track comment.id) {
+        <article>
+            <div class="author-box">
+                <span class="material-symbols-outlined profile-pic">account_circle</span>
+                <h3>{{ comment.author }}</h3>
+            </div>
+            <p>{{ comment.content }}</p>
+            <div class="timestamp">{{ comment.timestamp }}</div>
+        </article>
+        }
+        <form [formGroup]="commentForm" (ngSubmit)="comment()">
+            <label>
+                Write a comment
+                <textarea formControlName="content" rows="3"> </textarea>
+            </label>
+            <button type="submit" [disabled]="commentForm.invalid || didIJustHitSubmitAndAmWaitingToLoad">Post</button>
+        </form>
+    </section>
+</main>

@@ -8,16 +8,18 @@ import {
   onSnapshot,
   Firestore,
 } from '@angular/fire/firestore';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavigationComponent],
+  imports: [NavigationComponent, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   private _posts = [];
+  private timeOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
 
   public get posts(): any {
     return this._posts;
@@ -40,9 +42,20 @@ export class HomeComponent {
               content: message['content'],
               pace: message['pace'],
               location: message['location'],
+              timestamp: message['timestamp']?.toDate().toLocaleString('en-US', this.timeOptions),
             },
           );
         });
       });
+    }
+
+    getPaceClass(pace: String) {
+      if (pace === "Slow") {
+        return 'post-tag slow';
+      }
+      if (pace === "Moderate") {
+        return 'post-tag moderate';
+      }
+      return 'post-tag fast';
     }
 }
