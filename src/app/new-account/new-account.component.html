@@ -18,5 +18,5 @@
     Password
     <input type="password" minlength="6" formControlName="password" />
   </label>
-  <button type="submit" [disabled]="newAccountForm.invalid">Create account</button>
+  <button type="submit" [disabled]="!newAccountForm.valid">Create account</button>
 </form>
