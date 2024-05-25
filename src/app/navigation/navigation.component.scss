@@ -14,9 +14,14 @@ h1 {
   font-size: 2rem;
   margin-top: 1rem;
   padding-left: 1rem;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
-a {
+.nav-link {
   align-items: center;
   border-radius: 8px;
   color: #bdc1c6;
