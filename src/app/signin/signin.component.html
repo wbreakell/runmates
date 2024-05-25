@@ -4,11 +4,11 @@
 <form [formGroup]="signinForm" (ngSubmit)="signin()">
   <label>
     Email
-    <input type="email" formControlName="email" />
+    <input type="email" required formControlName="email" />
   </label>
   <label>
     Password
-    <input type="password" formControlName="password" />
+    <input type="password" required formControlName="password" />
   </label>
   <button type="submit">Sign in</button>
 </form>

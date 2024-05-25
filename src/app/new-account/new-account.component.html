@@ -4,19 +4,19 @@
 <form [formGroup]="newAccountForm" (ngSubmit)="createAccount()">
   <label>
     First Name
-    <input formControlName="firstName" />
+    <input type="text" required formControlName="firstName" />
   </label>
   <label>
     Last Name
-    <input formControlName="lastName" />
+    <input type="text" required formControlName="lastName" />
   </label>
   <label>
     Email
-    <input type="email" formControlName="email" />
+    <input type="email" required formControlName="email" />
   </label>
   <label>
     Password
-    <input type="password" minlength="6" formControlName="password" />
+    <input type="password" required minlength="6" formControlName="password" />
     <span>Password must be at least 6 characters</span>
   </label>
   <button type="submit" [disabled]="!newAccountForm.valid">Create account</button>
