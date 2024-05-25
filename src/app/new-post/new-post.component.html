@@ -23,7 +23,9 @@
           <option value="Fast">Fast</option>
         </select>
       </label>
-      <button type="submit" [disabled]="newPostForm.invalid || didIJustHitSubmitAndAmWaitingToLoad"><span class="material-symbols-outlined">edit</span>Post</button>
+      <button type="submit" [disabled]="!newPostForm.valid || didIJustHitSubmitAndAmWaitingToLoad">
+        <span class="material-symbols-outlined">edit</span>Post
+      </button>
     </form>
   </section>
 </main>
