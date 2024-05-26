@@ -4,14 +4,18 @@ main {
 }
 
 section {
-  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  margin: 0 auto 1rem;
   max-width: 65ch;
+  padding: 1rem 1.5rem;
 }
 
 h1,
-h2 {
+h2,
+h3 {
   color: #202124;
-  margin-top: 0;
+  margin: 0;
 }
 
 h1 {
@@ -19,28 +23,31 @@ h1 {
   margin-bottom: 0;
 }
 
-h3 {
-  color: #202124;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
 a {
+  color: #202124;
   text-decoration: none;
-  color: black;
 }
 
 article {
   background-color: #fff;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #dadce0;
+  padding: 1.5rem 0;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+form {
+  margin-top: 1rem;
 }
 
 button {
   align-items: center;
+  background-color: #8ab4f8;
   border-radius: 8px;
   border: none;
+  color: #202124;
   cursor: pointer;
   display: flex;
   font-family: inherit;
@@ -48,11 +55,8 @@ button {
   font-weight: 500;
   height: 56px;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   width: 100%;
-  background-color: #8ab4f8;
-  margin-top: 2rem;
-  color: #202124;
 
   &:hover {
       box-shadow: 0 1px 2px 0 rgba(#000, 0.3), 0 1px 3px 1px rgba(#000, 0.15);
@@ -72,8 +76,8 @@ textarea {
 }
 
 p {
-  margin-top: 0.25rem;
-  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  margin: 0.25rem 0 0.75rem;
 }
 
 .material-symbols-outlined {
@@ -82,13 +86,11 @@ p {
 }
 
 .author-box {
-  display: flex;
-  flex-direction: row;
   align-items: center;
+  display: flex;
 }
 
 .back {
-  cursor: pointer;
   font-size: 30px;
 }
 
@@ -98,8 +100,6 @@ p {
   border-radius: 999px;
   max-width: 250px;
   display: flex;
-  flex-direction: row;
-  align-content: center;
   color: rgb(2, 70, 117);
   background-color: rgba(52, 152, 219, 0.08);
   border-color: rgba(36, 106, 153, 0.2);
@@ -110,16 +110,12 @@ p {
 }
 
 .subtitle {
-  color: gray;
-  font-size: 0.75rem;
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
+  color: #5f6368;
+  font-size: 0.875rem;
 }
 
 .tag-box {
   display: flex;
-  flex-direction: row;
-  padding-bottom: 0.75rem;
 }
 
 .slow {
@@ -141,6 +137,6 @@ p {
 }
 
 .timestamp {
-  color: gray;
+  color: #5f6368;
   font-size: 0.75rem;
 }
