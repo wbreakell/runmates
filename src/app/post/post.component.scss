@@ -1,6 +1,7 @@
 main {
   margin-left: 360px;
   padding: 1.75rem;
+  position: relative;
 }
 
 section {
@@ -9,6 +10,68 @@ section {
   margin: 0 auto 1rem;
   max-width: 65ch;
   padding: 1rem 1.5rem;
+}
+
+dialog {
+  background-color: #fff;
+  border-radius: 8px;
+  border: none;
+  max-width: 65ch;
+  padding: 1.5rem;
+  text-align: center;
+
+  span {
+    color: #1a73e8;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: #3c4043;
+    margin: 1rem 0;
+    text-align: left;
+  }
+
+  form {
+    text-align: right;
+  }
+
+  label {
+    color: #3c4043;
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+
+  input {
+    height: 18px;
+    margin-right: 0.5rem;
+    vertical-align: sub;
+    width: 18px;
+  }
+
+  button {
+    background-color: transparent;
+    border-radius: 8px;
+    border: none;
+    color: #1a73e8;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    height: 36px;
+    padding: 0 1.5rem;
+
+    &:hover {
+      background-color: rgba(#3c4043, 0.08);
+    }
+  }
+}
+
+::backdrop {
+  background-color: #202124;
+  opacity: 0.6;
 }
 
 h1,
@@ -21,6 +84,10 @@ h3 {
 h1 {
   font-size: 2rem;
   margin-bottom: 0;
+}
+
+h3 {
+  margin-left: 0.5rem;
 }
 
 a {
@@ -42,7 +109,23 @@ form {
   margin-top: 1rem;
 }
 
-button {
+.report-button {
+  align-items: center;
+  background-color: transparent;
+  border-radius: 50%;
+  border: none;
+  color: #5f6368;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+
+  &:hover {
+    background-color: rgba(#3c4043, 0.08);
+  }
+}
+
+.post-button {
   align-items: center;
   background-color: #8ab4f8;
   border-radius: 8px;
@@ -59,7 +142,7 @@ button {
   width: 100%;
 
   &:hover {
-      box-shadow: 0 1px 2px 0 rgba(#000, 0.3), 0 1px 3px 1px rgba(#000, 0.15);
+    box-shadow: 0 1px 2px 0 rgba(#000, 0.3), 0 1px 3px 1px rgba(#000, 0.15);
   }
 }
 
@@ -78,11 +161,6 @@ textarea {
 p {
   line-height: 1.5;
   margin: 0.25rem 0 0.75rem;
-}
-
-.material-symbols-outlined {
-  font-size: 20px;
-  margin-right: 0.5rem;
 }
 
 .author-box {
@@ -114,8 +192,18 @@ p {
   font-size: 0.875rem;
 }
 
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
 .tag-box {
   display: flex;
+
+  span {
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+  }
 }
 
 .slow {

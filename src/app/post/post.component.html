@@ -5,15 +5,18 @@
     <h1>{{ title }}</h1>
     <p class="subtitle">{{ author }} · {{ timestamp }}</p>
     <p>{{ content }}</p>
-    <div class="tag-box">
-      <div class="post-tag">
-        <span class="material-symbols-outlined">location_on</span>
-        <div>{{ location }}</div>
+    <div class="actions">
+      <div class="tag-box">
+        <div class="post-tag">
+          <span class="material-symbols-outlined">location_on</span>{{ location }}
+        </div>
+        <div [class]="getPaceClass(pace)">
+          <span class="material-symbols-outlined">directions_run</span>{{ pace }}
+        </div>
       </div>
-      <div [class]="getPaceClass(pace)">
-        <span class="material-symbols-outlined">directions_run</span>
-        <div>{{ pace }}</div>
-      </div>
+      <button class="report-button" type="button" (click)="dialog.showModal()">
+        <span class="material-symbols-outlined">report</span>
+      </button>
     </div>
   </section>
   <section>
@@ -33,7 +36,32 @@
         Write a comment
         <textarea formControlName="content" rows="3"> </textarea>
       </label>
-      <button type="submit" [disabled]="commentForm.invalid || didIJustHitSubmitAndAmWaitingToLoad">Post</button>
+      <button class="post-button" type="submit" [disabled]="commentForm.invalid || didIJustHitSubmitAndAmWaitingToLoad">Post</button>
     </form>
   </section>
+  <dialog #dialog>
+    <span class="material-symbols-outlined">report</span>
+    <h2>Report this post?</h2>
+    <p>Tell us how this post violates the community code of conduct and we'll pass it on to moderators for further review.</p>
+    <form method="dialog">
+      <label>
+        <input type="checkbox" />
+        Spam
+      </label>
+      <label>
+        <input type="checkbox" />
+        Hate speech or abusive language
+      </label>
+      <label>
+        <input type="checkbox" />
+        Bullying or harassment
+      </label>
+      <label>
+        <input type="checkbox" />
+        Other
+      </label>
+      <button type="button" (click)="dialog.close()">Cancel</button>
+      <button type="button" (click)="dialog.close()">Report</button>
+    </form>
+  </dialog>
 </main>
