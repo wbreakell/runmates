@@ -44,6 +44,7 @@ export class NewPostComponent {
       title: this.newPostForm.value.title!,
       content: this.newPostForm.value.content!,
       location: this.newPostForm.value.location!,
+      lower_location: this.newPostForm.value.location?.toLowerCase(),
       pace: this.newPostForm.value.pace!,
       timestamp: serverTimestamp(),
     });
