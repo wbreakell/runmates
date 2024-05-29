@@ -2,6 +2,7 @@
 <main>
   <section>
     <h1>For You</h1>
+    <input class="search-bar" type="text" placeholder="Search by city" (keydown.enter)="searchLocation(filter.value)" #filter>
     @for (post of posts; track post.id) {
       <article [routerLink]="['/post', post.id]">
         <h2>{{ post.title }}</h2>

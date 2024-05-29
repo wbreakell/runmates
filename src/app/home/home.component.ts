@@ -5,8 +5,11 @@ import {
   query,
   orderBy,
   limit,
+  where,
   onSnapshot,
   Firestore,
+  getFirestore,
+  getDocs,
 } from '@angular/fire/firestore';
 import { RouterLink } from '@angular/router';
 
@@ -32,6 +35,26 @@ export class HomeComponent {
   constructor(firestore: Firestore) {
       const recentPostsQuery = query(collection(firestore, 'posts'), orderBy('timestamp', 'desc'), limit(12));
       onSnapshot(recentPostsQuery, (snapshot) => {
+        this.posts = [];
+        snapshot.forEach( (doc) => {
+          const message = doc.data();
+          this.posts.push(
+            {
+              id: doc.id,
+              title: message['title'],
+              content: message['content'],
+              pace: message['pace'],
+              location: message['location'],
+              timestamp: message['timestamp']?.toDate().toLocaleString('en-US', this.timeOptions),
+            },
+          );
+        });
+      });
+    }
+
+    searchLocation(location: String) {
+      const locationQuery = query(collection(getFirestore(), 'posts'), where('lower_location', '==', location.toLowerCase()), orderBy('timestamp', 'desc'), limit(12));
+      getDocs(locationQuery).then((snapshot) => {
         this.posts = [];
         snapshot.forEach( (doc) => {
           const message = doc.data();
